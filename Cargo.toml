@@ -1,0 +1,25 @@
+[package]
+name = "lepton-wasm"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+viewer = []
+full = ["viewer"]
+
+default = ["viewer"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+console_error_panic_hook = "0.1.7"
+lepton_jpeg = { path = "./src/lib" }
+
+[profile.release]
+opt-level = "z"     # 优化体积
+lto = true          # 链接时优化
+codegen-units = 1   # 提高优化质量
+panic = "abort"     # 减小体积
+strip = true        # 移除符号信息

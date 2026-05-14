@@ -1,0 +1,8 @@
+Pkg-Viewer
+Pkg-Viewer-Simd
+Pkg-Full
+Pkg-Full-Simd
+target
+build.bat
+build.sh
+*.7z
